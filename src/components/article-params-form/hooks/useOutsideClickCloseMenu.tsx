@@ -24,7 +24,9 @@ export const useOutsideClickCloseMenu = ({
 			}
 		};
 
-		window.addEventListener('click', handleClick);
+		if (isMenuOpen) {
+			window.addEventListener('click', handleClick);
+		}
 
 		return () => {
 			window.removeEventListener('click', handleClick);
